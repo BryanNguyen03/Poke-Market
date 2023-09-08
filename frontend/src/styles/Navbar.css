@@ -1,0 +1,30 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    margin: 0 1vw 0 1vw;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: inherit; 
+}
+
+.logo {
+    font-size: 1.5em;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4vw;
+}
+
+.links a {
+    font-size: 1.25em;
+}
+
+.links a:hover {
+    font-size: 1.35em;
+}

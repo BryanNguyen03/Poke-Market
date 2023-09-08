@@ -1,6 +1,6 @@
 import React from "react";
 
-const ProductCard = () => {
+const ProductCard: React.FC = () => {
   return <div className="productCard">Product</div>;
 };
 

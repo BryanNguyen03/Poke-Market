@@ -17,7 +17,6 @@ const App = () => {
           <Route path="/store" Component={Store}></Route>
           <Route path="/cart" Component={Cart}></Route>
         </Routes>
-        <div className="Footer"></div>
         <Footer />
       </div>
     </Router>

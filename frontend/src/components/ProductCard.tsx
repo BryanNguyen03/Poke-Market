@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/ProductCard.css";
 
 // Structure for our Pokemon data
@@ -8,7 +8,7 @@ interface Pokemon {
   sprite: string;
   type: string;
   type2: string;
-  number: number;
+  level: number;
 }
 
 interface PokemonCardProps {
@@ -16,7 +16,7 @@ interface PokemonCardProps {
 }
 
 const ProductCard: React.FC<PokemonCardProps> = ({ pokemon }) => {
-  // map for colour codes we'll be using for the cards depending on the pokemons typing
+  // colour code map for Pokemon typing
   const typeColours = {
     bug: "#26de81",
     dragon: "#ffeaa7",
@@ -34,16 +34,32 @@ const ProductCard: React.FC<PokemonCardProps> = ({ pokemon }) => {
     psychic: "#a29bfe",
     rock: "#2d3436",
     water: "#0190FF",
+    steel: "#71797e",
+    dark: "#36454F",
+  };
+
+  // State variable to track whether or not the card has been collected
+  const [collected, setCollected] = useState(false);
+  /**
+   * Function to handle click event
+   */
+  const handleClick = () => {
+    // If user has not collected the card set collected to true
+    if (!collected) {
+      setCollected(true);
+    }
   };
 
   return (
-    <div className={`pokemonCard-${pokemon.type}`}>
+    <div className={`pokemonCard-${pokemon.type}`} onClick={handleClick}>
       <div className="pokemonImage">
         <img src={pokemon.sprite} alt="pokemon sprite" />
       </div>
-      <div className="pokemonNumber">
-        <p>#{pokemon.id}</p>
+
+      <div className="cardLevel">
+        <p>LVL {pokemon.level}</p>
       </div>
+
       <div className="pokemon">
         <div className="pokemonName">
           <p>{pokemon.name}</p>
@@ -59,6 +75,12 @@ const ProductCard: React.FC<PokemonCardProps> = ({ pokemon }) => {
             <p className={`type-${pokemon.type}`}>{pokemon.type}</p>
           </div>
         )}
+
+        {collected ? (
+          <div className="collectedOverlay">
+            <p> COLLECTED </p>
+          </div>
+        ) : null}
       </div>
       <style>
         {`
@@ -69,8 +91,12 @@ const ProductCard: React.FC<PokemonCardProps> = ({ pokemon }) => {
         border-radius: 10px;
         background: radial-gradient(circle at 50% 0%, ${
           (typeColours as Record<string, string>)[pokemon.type]
-        } 50%, transparent 36%)
-      } ;
+        } 50%, #ffffff 36%)
+      }
+
+      .pokemonCard-${pokemon.type}:hover{
+        transform: scale(1.05);
+      }
     `}
       </style>
     </div>

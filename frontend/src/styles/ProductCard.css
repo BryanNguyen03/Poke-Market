@@ -5,7 +5,16 @@
   font-family: "Poppins", sans-serif;
 }
 
-.cardContainer {
+.collectionContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-bottom: 40px;
+}
+
+.storeContainer {
   display: flex;
   justify-content: center;
   align-items: center;

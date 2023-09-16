@@ -17,7 +17,7 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 });
 
 // routes
-app.use("/cards", cardRoutes);
+app.use("/collection", cardRoutes);
 
 // connect to db
 mongoose

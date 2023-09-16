@@ -3,7 +3,8 @@ import "../styles/ProductCard.css";
 
 // Structure for our Pokemon data
 interface Pokemon {
-  id: number;
+  _id: string;
+  pokemonNum: number;
   name: string;
   sprite: string;
   type: string;
@@ -42,12 +43,43 @@ const ProductCard: React.FC<PokemonCardProps> = ({ pokemon }) => {
   const [collected, setCollected] = useState(false);
   /**
    * Function to handle click event
+   * If a card is clicked, it will be set to collected and we add it to our collection
    */
-  const handleClick = () => {
-    // If user has not collected the card set collected to true
-    if (!collected) {
+  const handleClick = async () => {
+    /*
+    To ensure that cards in the collection are not collected again
+    we use the condition pokemon._id == "" as store cards do not have an _id value
+    */
+    if (pokemon._id == "" && !collected) {
       setCollected(true);
+
+      const pokemonNum = pokemon.pokemonNum;
+      const name = pokemon.name;
+      const sprite = pokemon.sprite;
+      const type = pokemon.type;
+      const type2 = pokemon.type2;
+      const level = pokemon.level;
+      const card = { pokemonNum, name, sprite, type, type2, level };
+      console.log(JSON.stringify(card));
+      const response = await fetch("/collection", {
+        method: "POST",
+        body: JSON.stringify(card),
+        headers: {
+          "Content-type": "application/json",
+        },
+      });
+      const json = await response.json();
+      if (!response.ok) {
+        console.log(json.emptyFields);
+      }
     }
+    /* TEMPORARY DELETE FUNCTION
+    else {
+      const response = await fetch("/collection/" + pokemon._id, {
+        method: "DELETE",
+      });
+      const json = await response.json();
+    }*/
   };
 
   return (

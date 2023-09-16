@@ -50,6 +50,7 @@ const createCard = async (req: Request, res: Response) => {
   }
 
   if (emptyFields.length > 0) {
+    console.log(emptyFields);
     return res
       .status(400)
       .json({ error: "Please fill in all the fields", emptyFields });

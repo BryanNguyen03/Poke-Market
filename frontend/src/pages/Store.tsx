@@ -3,7 +3,8 @@ import ProductCard from "../components/ProductCard";
 
 // Create structure for our Pokemon
 interface Pokemon {
-  id: number;
+  _id: string;
+  pokemonNum: number;
   name: string;
   sprite: string;
   type: string;
@@ -29,7 +30,8 @@ const Store: React.FC = () => {
 
     // Create our pokemon object with the fetched data
     const pokemon: Pokemon = {
-      id: data.id,
+      _id: "",
+      pokemonNum: data.id,
       name: data.name,
       sprite: data.sprites.front_default,
       type: data.types[0].type.name,
@@ -63,10 +65,10 @@ const Store: React.FC = () => {
   }, []);
 
   return (
-    <div className="cardContainer">
+    <div className="storeContainer">
       <div className="pokemonCards">
         {pokemonList.map((pokemon) => (
-          <ProductCard key={pokemon.id} pokemon={pokemon} />
+          <ProductCard key={pokemon.pokemonNum} pokemon={pokemon} />
         ))}
       </div>
     </div>

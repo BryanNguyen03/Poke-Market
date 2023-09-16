@@ -1,0 +1,181 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.collectionContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-bottom: 40px;
+}
+
+.storeContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.pokemonCards {
+  display: flex;
+  flex-wrap: wrap; /* Allows cards to wrap to the next row */
+  gap: 50px; /* Adjust the gap between cards */
+  width: 70%;
+  justify-content: center;
+}
+.pokemonImage {
+  display: block;
+  width: 180px;
+  max-height: 200px;
+  position: relative;
+  margin: 20px auto;
+}
+
+.pokemonImage img {
+  width: 100%;
+  height: 100%;
+}
+
+.cardLevel {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border-radius: 20px;
+  padding: 5px 20px;
+  text-align: center;
+  background-color: #ffffff;
+  color: #000000;
+  font-weight: bold;
+}
+
+.pokemonName {
+  text-align: center;
+  font-weight: 600;
+  color: black;
+}
+.pokemonTyping {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0 40px 0;
+}
+
+.pokemonTyping p {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.collectedOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999; /* Ensure the overlay is on top of other content */
+  font-weight: bold;
+}
+
+/* ================== POKEMON TYPING ================== */
+.type-bug {
+  background-color: #26de81;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.type-dragon {
+  background-color: #ffeaa7;
+  border-radius: 10px;
+  padding: 5px;
+}
+.type-electric {
+  background-color: #fed330;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.type-fairy {
+  background-color: #ff0069;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.type-fighting {
+  background-color: #30336b;
+  border-radius: 10px;
+  padding: 5px;
+}
+.type-fire {
+  background-color: #f0932b;
+  border-radius: 10px;
+  padding: 5px;
+}
+.type-flying {
+  background-color: #81ecec;
+  border-radius: 10px;
+  padding: 5px;
+}
+.type-grass {
+  background-color: #00b894;
+  border-radius: 10px;
+  padding: 5px;
+}
+.type-ground {
+  background-color: #efb549;
+  border-radius: 10px;
+  padding: 5px;
+}
+.type-ghost {
+  background-color: #a55eea;
+  border-radius: 10px;
+  padding: 5px;
+}
+.type-ice {
+  background-color: #74b9ff;
+  border-radius: 10px;
+  padding: 5px;
+}
+.type-normal {
+  background-color: #95afc0;
+  border-radius: 10px;
+  padding: 5px;
+}
+.type-poison {
+  background-color: #6c5ce7;
+  border-radius: 10px;
+  padding: 5px;
+}
+.type-psychic {
+  background-color: #a29bfe;
+  border-radius: 10px;
+  padding: 5px;
+}
+.type-rock {
+  background-color: #2d3436;
+  border-radius: 10px;
+  padding: 5px;
+}
+.type-water {
+  background-color: #0190ff;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.type-steel {
+  background-color: #71797e;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.type-dark {
+  background-color: #36454f;
+  border-radius: 10px;
+  padding: 5px;
+}

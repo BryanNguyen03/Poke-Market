@@ -6,3 +6,10 @@
   width: 100%;
   text-align: center;
 }
+
+.formContainer {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

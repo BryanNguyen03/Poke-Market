@@ -4,6 +4,7 @@ import { Request, Response, NextFunction } from "express";
 const express = require("express");
 const mongoose = require("mongoose");
 const cardRoutes = require("./routes/card");
+const userRoutes = require("./routes/user");
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 
 // routes
 app.use("/collection", cardRoutes);
+app.use("/users", userRoutes);
 
 // connect to db
 mongoose

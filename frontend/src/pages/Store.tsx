@@ -15,6 +15,7 @@ interface Pokemon {
 const Store: React.FC = () => {
   // list of Pokemon
   const [pokemonList, setPokemon] = useState<Pokemon[]>([]);
+  const [loading, setLoading] = useState(false);
 
   /**
    * Function that takes in an id and gets the data for the corresponding Pokemon
@@ -45,6 +46,7 @@ const Store: React.FC = () => {
    * Function to load our daily Pokemon cards
    */
   const getPokemon = async () => {
+    setLoading(true);
     let loadedArray: Pokemon[] = [];
 
     // Get 4 random Pokemon cards for daily store
@@ -56,6 +58,7 @@ const Store: React.FC = () => {
 
     // set our list of Pokemon to loadedArray
     setPokemon(loadedArray);
+    setLoading(false);
   };
 
   // Load cards on first render
@@ -65,6 +68,8 @@ const Store: React.FC = () => {
 
   return (
     <div className="storeContainer">
+      {loading ? <div className="loadingMessage">Loading</div> : null}
+
       <div className="pokemonCards">
         {pokemonList.map((pokemon) => (
           <ProductCard key={pokemon.pokemonNum} pokemon={pokemon} />

@@ -15,8 +15,8 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="navbar">
-      <Link className="logo" to="/">
-        Logo
+      <Link className="websiteName" to="/">
+        Poke-Market
       </Link>
 
       <div className="links">
@@ -25,17 +25,17 @@ const Navbar: React.FC = () => {
         <Link to="/collection">Collection</Link>
       </div>
 
-      {!user && (
-        <div>
+      {!user ? (
+        <div className="login-signup-links">
           <Link to="/login">Login</Link>
           <Link to="/signup">Signup</Link>
         </div>
-      )}
-
-      {user && (
-        <div>
-          <span>{user.email}</span>
-          <button onClick={handleClick}>Log out</button>
+      ) : (
+        <div className="user-section">
+          <span className="user-email">{user.email}</span>
+          <button className="logout-button" onClick={handleClick}>
+            Log out
+          </button>
         </div>
       )}
     </nav>

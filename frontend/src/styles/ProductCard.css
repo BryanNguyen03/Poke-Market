@@ -5,6 +5,7 @@
   font-family: "Poppins", sans-serif;
 }
 
+/* ######################## CARD CONTAINERS ##################### */
 .collectionContainer {
   display: flex;
   flex-direction: column;
@@ -12,15 +13,23 @@
   flex-grow: 1;
   overflow-y: auto;
   margin-bottom: 40px;
+  padding: 10px;
 }
 
-.storeContainer {
+.storeContainer,
+.loadingMessage {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 90vh;
+  justify-content: center;
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-bottom: 40px;
+  padding: 10px;
+  margin-top: 40px;
 }
 
+/* ######################## CARD STYLING ##################### */
 .pokemonCards {
   display: flex;
   flex-wrap: wrap; /* Allows cards to wrap to the next row */

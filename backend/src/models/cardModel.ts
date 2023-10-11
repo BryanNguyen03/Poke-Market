@@ -10,6 +10,7 @@ const cardSchema = new Schema(
     type: { type: String, require: true },
     type2: { type: String, require: false },
     level: { type: Number, require: true },
+    user_id: { type: String, required: true },
   },
   { timestamps: true }
 );

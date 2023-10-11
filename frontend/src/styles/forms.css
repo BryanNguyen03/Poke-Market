@@ -1,0 +1,85 @@
+.formContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.signup,
+.login {
+  width: 300px;
+  padding: 20px;
+  background-color: #ffff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.signup h3,
+.login h3 {
+  color: #1e293b;
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Form labels */
+.signup label,
+.login label {
+  color: #1e293b;
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.signup input[type="email"],
+.signup input[type="password"],
+.login input[type="email"],
+.login input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+.signup button,
+.login button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.signup button:disabled,
+.login button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.linkToLogin label,
+.linkToSignup label {
+  font-size: 12px;
+}
+
+.signup a,
+.login a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.signup a:hover,
+.login a {
+  text-decoration: underline;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+  text-align: center;
+}

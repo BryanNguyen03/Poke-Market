@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../styles/ProductCard.css";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 // Structure for our Pokemon data
 interface Pokemon {
@@ -17,6 +18,8 @@ interface PokemonCardProps {
 }
 
 const ProductCard: React.FC<PokemonCardProps> = ({ pokemon }) => {
+  const { user } = useAuthContext();
+
   // colour code map for Pokemon typing
   const typeColours = {
     bug: "#26de81",
@@ -50,6 +53,9 @@ const ProductCard: React.FC<PokemonCardProps> = ({ pokemon }) => {
     To ensure that cards in the collection are not collected again
     we use the condition pokemon._id == "" as store cards do not have an _id value
     */
+    if (!user) {
+      return;
+    }
     if (pokemon._id == "" && !collected) {
       setCollected(true);
 
@@ -66,6 +72,7 @@ const ProductCard: React.FC<PokemonCardProps> = ({ pokemon }) => {
         body: JSON.stringify(card),
         headers: {
           "Content-type": "application/json",
+          Authorization: `Bearer ${user.token}`,
         },
       });
       const json = await response.json();

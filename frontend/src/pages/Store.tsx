@@ -56,7 +56,6 @@ const Store: React.FC = () => {
 
     // set our list of Pokemon to loadedArray
     setPokemon(loadedArray);
-    console.log(loadedArray);
   };
 
   // Load cards on first render

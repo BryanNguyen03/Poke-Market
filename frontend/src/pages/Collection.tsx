@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 interface Pokemon {
   _id: string;
@@ -17,17 +18,24 @@ const Collection: React.FC = () => {
   const [searchFilter, setSearchFilter] = useState("");
   const [sortByName, setSortByName] = useState(false);
   const [sortByRarity, setSortByRarity] = useState(false);
+  const { user } = useAuthContext();
 
   useEffect(() => {
     const fetchCards = async () => {
-      const response = await fetch("/collection");
+      if (!user) {
+        return;
+      }
+
+      // GET request
+      const response = await fetch("/collection", {
+        headers: { Authorization: `Bearer ${user.token}` },
+      });
       const json = await response.json();
 
       if (response.ok) {
         setCardCollection(json);
       }
     };
-
     fetchCards();
   }, []);
 

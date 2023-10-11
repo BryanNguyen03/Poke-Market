@@ -1,13 +1,18 @@
 import { useState } from "react";
-import "../styles/App.css";
+import { useLogin } from "../hooks/useLogin";
+import { Link } from "react-router-dom";
+import "../styles/forms.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { login, error, isLoading } = useLogin();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     // prevent refresh (which is default behaviour when submitting a form)
     e.preventDefault();
+
+    await login(email, password);
   };
 
   return (
@@ -22,13 +27,19 @@ const Login = () => {
           value={email}
         />
 
+        <label>Password: </label>
         <input
           type="password"
           onChange={(e) => setPassword(e.target.value)}
           value={password}
         />
 
-        <button>Log in</button>
+        <button disabled={isLoading}>Log in</button>
+        <div className="linkToSignup">
+          <label>Don't have an account?</label>
+          <Link to="/signup">Sign up!</Link>
+        </div>
+        {error && <div className="error">{error}</div>}
       </form>
     </div>
   );

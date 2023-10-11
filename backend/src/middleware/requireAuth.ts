@@ -1,0 +1,38 @@
+import { Request, Response, NextFunction } from "express";
+
+const jwt = require("jsonwebtoken");
+const User = require("../models/userModel");
+
+// Define a custom user property on the Request type
+declare global {
+  namespace Express {
+    interface Request {
+      user?: Document & { _id: string }; // Customize this type to match your User model
+    }
+  }
+}
+
+const requireAuth = async (req: Request, res: Response, next: NextFunction) => {
+  // verify authentication
+  const { authorization } = req.headers;
+
+  if (!authorization) {
+    return res.status(400).json({ error: "Authorization token required" });
+  }
+
+  // get the token from the authorization header
+  const token = authorization.split(" ")[1];
+
+  // verify token using the SECRET from .env
+  try {
+    const { _id } = jwt.verify(token, process.env.SECRET);
+
+    // Get user by id and continue to next middleware/route handler
+    req.user = await User.findOne({ _id }).select("_id");
+    next();
+  } catch (error: any) {
+    res.status(401).json({ error: "Request is not authorized" });
+  }
+};
+
+module.exports = requireAuth;

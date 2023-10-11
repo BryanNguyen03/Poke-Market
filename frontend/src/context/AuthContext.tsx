@@ -3,6 +3,7 @@ import { createContext, useEffect, useReducer, ReactNode } from "react";
 interface User {
   email: string;
   password: string;
+  token?: string;
 }
 
 // Define state and action for our reducer
@@ -50,6 +51,17 @@ export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
     authReducer as React.Reducer<AuthState, AuthAction>, // Type assertion
     { user: null } as AuthState // Type assertion for initial state
   );
+
+  // When the component first mounts, we want to check if there's a user key in the local storage
+  // if there is we can log the user in
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+
+    if (storedUser) {
+      const user = JSON.parse(storedUser);
+      dispatch({ type: "LOGIN", payload: user });
+    }
+  }, []);
 
   return (
     <AuthContext.Provider value={{ ...state, dispatch }}>

@@ -2,9 +2,21 @@ const Card = require("../models/cardModel");
 const mongoose = require("mongoose");
 import { Request, Response } from "express";
 
-// Get all cards
+// Define a custom user property on the Request type
+declare global {
+  namespace Express {
+    interface Request {
+      user?: Document & { _id: string }; // Customize this type to match your User model
+    }
+  }
+}
+
+// Get all cards for specific user
 const getCards = async (req: Request, res: Response) => {
-  const cards = await Card.find({}).sort({ createdAt: -1 });
+  // Get cards owned by the user
+  const user_id = (req.user as { _id: string })._id;
+
+  const cards = await Card.find({ user_id }).sort({ createdAt: -1 });
 
   res.status(200).json(cards);
 };
@@ -57,6 +69,7 @@ const createCard = async (req: Request, res: Response) => {
   }
 
   try {
+    const user_id = (req.user as { _id: string })._id;
     const card = await Card.create({
       pokemonNum,
       name,
@@ -64,6 +77,7 @@ const createCard = async (req: Request, res: Response) => {
       type,
       type2,
       level,
+      user_id,
     });
     res.status(200).json(card);
   } catch (error: any) {

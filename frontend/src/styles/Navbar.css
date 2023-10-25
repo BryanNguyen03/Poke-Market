@@ -2,22 +2,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333;
+  background-color: #C63C3C;
   color: white;
   padding: 10px 20px;
+  font-size: 1.25em;
 }
 
-.websiteName {
-  text-decoration: none;
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
+.navbar-icon {
+  width: 55px;
 }
 
 .links {
   display: flex;
-  gap: 20px;
+  gap: 35px;
   list-style-type: none;
+  align-items: center;
 }
 
 .links a {
@@ -79,11 +78,6 @@
   .navbar {
     flex-direction: column;
     padding: 10px;
-  }
-
-  .websiteName {
-    font-size: 18px;
-    margin-bottom: 10px;
   }
 
   .links a {

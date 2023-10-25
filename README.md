@@ -29,10 +29,18 @@ To get started, follow these steps:
 git clone https://github.com/BryanNguyen03/Poke-Market.git
 cd Poke-Market
 npm install
+```
 
+4. Open two different terminals and run the two code blocks separately:
+
+```bash
 cd backend
-npm start
+nodemon
+```
 
+```bash
 cd frontend
 npm start
 ```
+
+5. Happy Collecting!

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ProductCard from "../components/ProductCard";
+import pokemarketLogo from '../assets/pokemarketLogo.png'
+import '../styles/Store.css'
 
 // Create structure for our Pokemon
 interface Pokemon {
@@ -68,8 +70,11 @@ const Store: React.FC = () => {
 
   return (
     <div className="storeContainer">
-      {loading ? <div className="loadingMessage">Loading</div> : null}
+      <img className="logo" src={pokemarketLogo}/>
 
+      <hr style={{color: '#fff', backgroundColor: '#fff', width: '75%', height: '2px'}}/>
+
+      {loading ? <div className="loadingMessage">Loading...</div> : null}
       <div className="pokemonCards">
         {pokemonList.map((pokemon) => (
           <ProductCard key={pokemon.pokemonNum} pokemon={pokemon} />

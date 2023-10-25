@@ -47,7 +47,7 @@
 .login button {
   width: 100%;
   padding: 10px;
-  background-color: #007bff;
+  background-color: #C63C3C;
   color: #fff;
   border: none;
   border-radius: 3px;
@@ -69,7 +69,7 @@
 .signup a,
 .login a {
   text-decoration: none;
-  color: #007bff;
+  color: #C63C3C;
   font-weight: bold;
 }
 

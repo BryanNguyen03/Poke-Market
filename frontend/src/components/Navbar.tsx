@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useLogout } from "../hooks/useLogout";
 import { useAuthContext } from "../hooks/useAuthContext";
+import NavPikachu from '../assets/navPikachu.png';
 
 import "../styles/Navbar.css";
 
@@ -15,11 +16,10 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="navbar">
-      <Link className="websiteName" to="/">
-        Poke-Market
-      </Link>
-
       <div className="links">
+        <Link to="/">
+          <img className="navbar-icon" src={NavPikachu}></img>
+        </Link>
         <Link to="/">Home</Link>
         <Link to="/store">Store</Link>
         <Link to="/collection">Collection</Link>

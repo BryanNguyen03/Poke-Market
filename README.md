@@ -4,6 +4,23 @@
 
 Poke-Market is a web application developed by Bryan Nguyen and Ricky Tran. It allows users to sign up/login to collect four daily Pokemon cards. Users can browse their collection of Pokemon cards and filter through them. Pokemon information is retrieved from the RESTful API, PokeAPI.
 
+### Preview
+
+<!--
+<iframe frameBorder='0' width='640' height='360' webkitallowfullscreen mozallowfullscreen allowfullscreen src="https://www.awesomescreenshot.com/video/22868428?key=d85ff5e281a3d036433a1221c7b3f348"></iframe>
+
+<iframe frameBorder='0' width='640' height='360' webkitallowfullscreen mozallowfullscreen allowfullscreen src="https://www.awesomescreenshot.com/video/22868473?key=c2fa5caad2dc0eef694e35e928166666"></iframe>
+
+
+
+https://www.awesomescreenshot.com/video/22868382?key=c93b376eb311e3351770fe6d16f923a4
+
+-->
+
+![Home Page Preview](Images/HomePreview.gif)
+![Store Page Preview](Images/StorePreview.gif)
+![Collection Page Preview](Images/CollectionPreview.gif)
+
 ### Features
 
 - User authentication (sign up and login)
@@ -40,6 +57,7 @@ nodemon
 
 ```bash
 cd frontend
+npm run build
 npm start
 ```
 

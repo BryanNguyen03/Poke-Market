@@ -17,9 +17,9 @@ https://www.awesomescreenshot.com/video/22868382?key=c93b376eb311e3351770fe6d16f
 
 -->
 
-![Home Page Preview](Images/HomePreview.gif)
-![Store Page Preview](Images/StorePreview.gif)
-![Collection Page Preview](Images/CollectionPreview.gif)
+![Home Page Preview](preview_files/HomePreview.gif)
+![Store Page Preview](preview_files/StorePreview.gif)
+![Collection Page Preview](preview_files/CollectionPreview.gif)
 
 ### Features
 

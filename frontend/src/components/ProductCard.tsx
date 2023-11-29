@@ -101,17 +101,17 @@ const ProductCard: React.FC<PokemonCardProps> = ({ pokemon }) => {
 
       <div className="pokemon">
         <div className="pokemonName">
-          <p>{pokemon.name}</p>
+          <p>{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</p>
         </div>
 
         {pokemon.type2 != null ? (
           <div className="pokemonTyping">
-            <p className={`type-${pokemon.type}`}>{pokemon.type}</p>
-            <p className={`type-${pokemon.type2}`}>{pokemon.type2}</p>
+            <p className={`type type-${pokemon.type}`}>{pokemon.type.charAt(0).toUpperCase() + pokemon.type.slice(1)}</p>
+            <p className={`type type-${pokemon.type2}`}>{pokemon.type2.charAt(0).toUpperCase() + pokemon.type2.slice(1)}</p>
           </div>
         ) : (
           <div className="pokemonTyping">
-            <p className={`type-${pokemon.type}`}>{pokemon.type}</p>
+            <p className={`type type-${pokemon.type}`}>{pokemon.type.charAt(0).toUpperCase() + pokemon.type.slice(1)}</p>
           </div>
         )}
 
@@ -130,7 +130,7 @@ const ProductCard: React.FC<PokemonCardProps> = ({ pokemon }) => {
         border-radius: 10px;
         background: radial-gradient(circle at 50% 0%, ${
           (typeColours as Record<string, string>)[pokemon.type]
-        } 50%, #ffffff 36%)
+        } 57%, #ffffff 36%)
       }
 
       .pokemonCard-${pokemon.type}:hover{

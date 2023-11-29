@@ -1,0 +1,26 @@
+.storeContainer,
+.loadingMessage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+
+  justify-content: center;
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-bottom: 40px;
+  padding: 10px;
+  margin-top: 40px;
+}
+
+.storeContainer {
+  margin: 2%;
+}
+
+.pokemonCards {
+  display: flex;
+  flex-wrap: wrap; /* Allows cards to wrap to the next row */
+  gap: 50px; /* Adjust the gap between cards */
+  width: 100%;
+  justify-content: center;
+}

@@ -16,27 +16,7 @@
   padding: 10px;
 }
 
-.storeContainer,
-.loadingMessage {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  flex-grow: 1;
-  overflow-y: auto;
-  margin-bottom: 40px;
-  padding: 10px;
-  margin-top: 40px;
-}
-
 /* ######################## CARD STYLING ##################### */
-.pokemonCards {
-  display: flex;
-  flex-wrap: wrap; /* Allows cards to wrap to the next row */
-  gap: 50px; /* Adjust the gap between cards */
-  width: 70%;
-  justify-content: center;
-}
 .pokemonImage {
   display: block;
   width: 180px;
@@ -67,6 +47,7 @@
   font-weight: 600;
   color: black;
 }
+
 .pokemonTyping {
   display: flex;
   justify-content: space-around;
@@ -93,98 +74,67 @@
 }
 
 /* ================== POKEMON TYPING ================== */
+.type {
+  border-radius: 8px;
+  padding: 5px 15px 5px 15px;
+}
+
 .type-bug {
   background-color: #26de81;
-  border-radius: 10px;
-  padding: 5px;
 }
 
 .type-dragon {
   background-color: #ffeaa7;
-  border-radius: 10px;
-  padding: 5px;
 }
 .type-electric {
   background-color: #fed330;
-  border-radius: 10px;
-  padding: 5px;
 }
 
 .type-fairy {
   background-color: #ff0069;
-  border-radius: 10px;
-  padding: 5px;
 }
 
 .type-fighting {
   background-color: #30336b;
-  border-radius: 10px;
-  padding: 5px;
 }
 .type-fire {
   background-color: #f0932b;
-  border-radius: 10px;
-  padding: 5px;
 }
 .type-flying {
   background-color: #81ecec;
-  border-radius: 10px;
-  padding: 5px;
 }
 .type-grass {
   background-color: #00b894;
-  border-radius: 10px;
-  padding: 5px;
 }
 .type-ground {
   background-color: #efb549;
-  border-radius: 10px;
-  padding: 5px;
 }
 .type-ghost {
   background-color: #a55eea;
-  border-radius: 10px;
-  padding: 5px;
 }
 .type-ice {
   background-color: #74b9ff;
-  border-radius: 10px;
-  padding: 5px;
 }
 .type-normal {
   background-color: #95afc0;
-  border-radius: 10px;
-  padding: 5px;
 }
 .type-poison {
   background-color: #6c5ce7;
-  border-radius: 10px;
-  padding: 5px;
 }
 .type-psychic {
   background-color: #a29bfe;
-  border-radius: 10px;
-  padding: 5px;
 }
 .type-rock {
   background-color: #2d3436;
-  border-radius: 10px;
-  padding: 5px;
 }
 .type-water {
   background-color: #0190ff;
-  border-radius: 10px;
-  padding: 5px;
 }
 
 .type-steel {
   background-color: #71797e;
-  border-radius: 10px;
-  padding: 5px;
 }
 
 .type-dark {
   background-color: #36454f;
-  border-radius: 10px;
-  padding: 5px;
 }

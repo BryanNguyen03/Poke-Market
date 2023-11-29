@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
 import { useAuthContext } from "../hooks/useAuthContext";
+import collectionsLogo from '../assets/collectionsLogo.png'
+import '../styles/Collection.css'
 
 interface Pokemon {
   _id: string;
@@ -41,6 +43,9 @@ const Collection: React.FC = () => {
 
   return (
     <div className="collectionContainer">
+      <img className="logo" src={collectionsLogo}/>
+      <hr style={{color: '#fff', backgroundColor: '#fff', width: '75%', height: '2px', margin: '2vh 0'}}/>
+
       <div className="pokemonCards">
         {cardCollection &&
           cardCollection.map((pokemon) => (
